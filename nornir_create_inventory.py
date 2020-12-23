@@ -23,7 +23,7 @@ import getpass
 import os,sys
 import yaml
 
-nr = InitNornir(config_file="/home/schlueterbe/config_files/nornir/nornir3_config.yaml")
+nr = InitNornir(config_file="/home/nouse4it/config_files/nornir/nornir3_config.yaml")
 
 access_user = input('Enter Access Username: ') # Enter Username for Access Switch
 access_password = getpass.getpass(prompt ="Access Switch password: ") # Enter password for Device in Access Group in Hosts.yaml
@@ -67,7 +67,7 @@ def read_devices(get_facts):
         device = {'hostname': hostname,
                   'IOS':   os_version,
                   'SN': sn,
-                  'Model': model} # create dictionary of device objects ..., [] is used so that value is used as a list inside yaml-file, [2] is used to get correct value from kl
+                  'Model': model} # create dictionary of device objects
 
         devices[device['hostname']] = device  # store our device in the devices dictionary
                                           # note the key for devices dictionary entries is name
