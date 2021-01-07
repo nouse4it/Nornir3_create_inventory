@@ -9,7 +9,7 @@ Author: nouse4it <github@schlueter-online.net>
 
 ## Use Case Description
 
-The script is intended to automatically gahter facts form existing devices.
+The script is intended to automatically gather facts from devices to create a inventory to store all gathered informations.
 The script is able to perform the gathering of the facts on multiple devices in parallel.
 
 ## Installation
