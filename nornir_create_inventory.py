@@ -1,15 +1,15 @@
 #!/usr/bin/python3
-__author__ = "Benjamin Schlüter"
-__author_email__ = "benjamin.schlueter@hirschvogel.com"
-__copyright__ = "Copyright (c) 2020 Benjamin Schlüter (ITT4 / Hirschvogel Holding GmbH)"
+__author__ = "nouse4it"
+__author_email__ = "github@schlueter-online.net"
+__copyright__ = "Copyright (c) 2020 nouse4it"
 
 """
 Category: Python Nornig  Script
-Author: Benjamin Schlüter <benjamin.schlueter@hirschvogel.com>
+Author: nouse4it <github@schlueter-online.net>
 
 nornir_create_inventory.py
 Illustrate the following conecepts:
-- Create a detailed YAML Inventory for using with Nornig from HIVO-KL
+- Create a detailed YAML Inventory including IOS Version and Serial Number
 """
 
 # Importing all needed Modules
@@ -23,19 +23,19 @@ import getpass
 import os,sys
 import yaml
 
-nr = InitNornir(config_file="/home/nouse4it/config_files/nornir/nornir3_config.yaml")
+nr = InitNornir(config_file="/home/<username>/config_files/nornir/nornir3_config.yaml")
 
 access_user = input('Enter Access Username: ') # Enter Username for Access Switch
 access_password = getpass.getpass(prompt ="Access Switch password: ") # Enter password for Device in Access Group in Hosts.yaml
 
-nr.inventory.groups['a'].username = access_user # set Username for Access Group
-nr.inventory.groups['a'].password = access_password # set password for Core Group
+nr.inventory.groups['a'].username = access_user # set Username for Access Switch Group
+nr.inventory.groups['a'].password = access_password # set password for Access Switch Group
 
-core_user = input('Enter Core Username: ') # Enter Username for Access Switch
-core_password = getpass.getpass(prompt ="Core Switch password: ") # Enter password for Device in Access Group in Hosts.yaml
+core_user = input('Enter Core Username: ') # Enter Username for Core Switch
+core_password = getpass.getpass(prompt ="Core Switch password: ") # Enter password for Device in Core Switch Group in Hosts.yaml
 
-nr.inventory.groups['c'].username = core_user # set Username for Access Group
-nr.inventory.groups['c'].password = core_password # set password for Core Group
+nr.inventory.groups['c'].username = core_user # set Username for Core Switches Group
+nr.inventory.groups['c'].password = core_password # set password for Core Switches Group
 
 #==============================================================================
 # Get Facts from Devices
